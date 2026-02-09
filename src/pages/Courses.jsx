@@ -6,7 +6,7 @@ export default function Courses() {
       
       <div className="min-h-screen flex items-center justify-center bg-[#4EC1BE]">
         <h1 className="text-5xl font-bold text-white">
-          Courses Page 🚀
+          Training Page 🚀
         </h1>
       </div>
     </>

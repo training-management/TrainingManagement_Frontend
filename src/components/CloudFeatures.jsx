@@ -19,7 +19,7 @@ export default function CloudFeatures() {
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-10">
 
           {/* Card 1 */}
-          <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-xl transition">
+          <div className="bg-white rounded-3xl p-12 border-2 border-teal-300 shadow-xl scale-105">
             <div className="w-16 h-16 mx-auto rounded-full bg-sky-400 flex items-center justify-center text-white text-2xl">
               📄
             </div>
@@ -35,7 +35,7 @@ export default function CloudFeatures() {
           </div>
 
           {/* Card 2 (Highlighted) */}
-          <div className="bg-white rounded-3xl p-12 border-2 border-teal-300 shadow-xl scale-105">
+          <div className="bg-white rounded-3xl p-12 border-2 border-teal-300 shadow-2xl scale-105  hover:shadow-2xl ">
             <div className="w-16 h-16 mx-auto rounded-full bg-green-400 flex items-center justify-center text-white text-2xl">
               📅
             </div>
@@ -51,7 +51,7 @@ export default function CloudFeatures() {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-xl transition">
+          <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition ">
             <div className="w-16 h-16 mx-auto rounded-full bg-blue-400 flex items-center justify-center text-white text-2xl">
               👥
             </div>

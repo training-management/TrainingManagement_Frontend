@@ -1,3 +1,6 @@
+import Img from "../assets/trainers.png";
+import Img1 from "../assets/forstudent.png";
+
 export default function WhatIsTalentGrow() {
   return (
     <section className="w-full bg-[#F8FAFC] py-20">
@@ -25,7 +28,7 @@ export default function WhatIsTalentGrow() {
           {/* Trainers Card */}
           <div className="relative rounded-3xl overflow-hidden shadow-lg group">
             <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+              src={Img}
               alt="For Trainers"
               className="w-full h-260px]object-cover"
             />
@@ -41,7 +44,7 @@ export default function WhatIsTalentGrow() {
           {/* Students Card */}
           <div className="relative rounded-3xl overflow-hidden shadow-lg group">
             <img
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+              src={Img1}
               alt="For Students"
               className="w-full h-260px object-cover"
             />

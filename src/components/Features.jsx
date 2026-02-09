@@ -1,3 +1,5 @@
+import Img from "../assets/features.png";
+
 import { Check } from "lucide-react";
 
 export default function Features() {
@@ -22,7 +24,7 @@ export default function Features() {
           <div className="flex justify-center">
             <div className="bg-white rounded-2xl shadow-xl p-6 max-w-lg">
               <img
-                src="https://i.pinimg.com/736x/69/91/d3/6991d3068d55123e5e38bc9bc2be740e.jpg"
+                src={Img}
                 alt="Feature UI"
                 className="w-full rounded-xl"
               />
