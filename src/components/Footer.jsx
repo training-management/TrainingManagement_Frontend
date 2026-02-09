@@ -5,8 +5,9 @@ export default function Footer() {
       {/* TOP INFO BAR */}
       <div className="bg-teal-500 text-white text-sm">
         <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between">
-          <span>Email: admissions@talentgrow.com</span>
           <span>Support: +91 98765 43210</span>
+           <span>Email: admissions@talentgrow.com</span>
+          
           <span>ISO 9001:2015 Certified Institute</span>
         </div>
       </div>

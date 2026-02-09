@@ -1,6 +1,19 @@
 import Img from "../assets/fullstack.png";
+import pianoSound from "../assets/piano.mp3";
+
 
 export default function ExploreCourses() {
+
+ 
+
+  const playSound = () => {
+    const audio = new Audio(pianoSound);
+    audio.currentTime = 0;
+    audio.play();
+  };
+
+  
+
   return (
     <section className="w-full bg-[#eef7fb] py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -17,36 +30,47 @@ export default function ExploreCourses() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* LEFT TAGS */}
-          <div className="flex gap-4 overflow-hidden">
-            {[
-              "Web Design",
-              "Python",
-              "Java",
-              "React JS",
-              "Node JS",
-              "UI / UX",
-              "Data Science",
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="w-24 h-72 rounded-3xl flex items-center justify-center text-white font-semibold rotate-6deg"
-                style={{
-                  background: [
-                    "#ff8a00",
-                    "#ff7b7b",
-                    "#9c5a1a",
-                    "#ffbf00",
-                    "#b388ff",
-                    "#00a2ff",
-                    "#32c36c",
-                  ][i],
-                }}
-              >
-                <span className="rotate-90 whitespace-nowrap">{item}</span>
-              </div>
-            ))}
-          </div>
+         {/* LEFT TAGS – PIANO STYLE */}
+{/* LEFT TAGS – PIANO WITH SOUND */}
+<div className="flex gap-4 overflow-hidden">
+  {[
+    "Web Design",
+    "Python",
+    "Java",
+    "React JS",
+    "Node JS",
+    "UI / UX",
+    "Data Science",
+  ].map((item, i) => (
+   <button
+  key={i}
+  onClick={playSound}
+  className="w-24 h-72 rounded-3xl flex items-center justify-center
+             text-white font-semibold rotate-6deg
+             transition-all duration-150
+             hover:-translate-y-1
+             active:translate-y-2 active:shadow-inner"
+  style={{
+    background: [
+      "#ff8a00",
+      "#ff7b7b",
+      "#9c5a1a",
+      "#ffbf00",
+      "#b388ff",
+      "#00a2ff",
+      "#32c36c",
+    ][i],
+    boxShadow: "0 10px 0 rgba(0,0,0,0.18)",
+  }}
+>
+
+    
+      <span className="rotate-90 whitespace-nowrap select-none">
+        {item}
+      </span>
+    </button>
+  ))}
+</div>
 
           {/* RIGHT CARD */}
           <div className="bg-white rounded-3xl p-8 shadow-card flex gap-6 items-center">

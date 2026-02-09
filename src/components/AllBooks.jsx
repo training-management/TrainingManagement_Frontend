@@ -1,3 +1,5 @@
+import Img from "../assets/book.png";
+
 export default function AllBooks() {
   return (
     <section className="w-full bg-[#eef7fb] py-24">
@@ -38,7 +40,7 @@ export default function AllBooks() {
           {/* CENTER BOOK CARD */}
           <div className="bg-white rounded-3xl p-8 shadow-card flex gap-8 items-center">
             <img
-              src="https://i.imgur.com/6YVQZ8C.png"
+              src={Img}
               alt="Python Book"
               className="w-32"
             />

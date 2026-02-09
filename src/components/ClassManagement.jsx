@@ -1,3 +1,7 @@
+
+import Img from "../assets/class.png";
+
+
 export default function ClassManagement() {
   return (
     <section className="w-full bg-[#F9FAFB] py-24">
@@ -19,60 +23,37 @@ export default function ClassManagement() {
             </p>
           </div>
 
-          {/* RIGHT GRADEBOOK CARD */}
-          <div className="flex justify-center">
-            <div className="relative bg-white rounded-2xl shadow-xl p-6 w-full">
+          
+{/* RIGHT IMAGE CARD */}
+<div className="flex justify-center perspective-1000">
 
-              {/* Header */}
-              <div className="flex items-center justify-between bg-blue-400 rounded-xl px-4 py-2 text-white mb-4">
-                <span className="font-medium">GradeBook</span>
-                <span className="bg-yellow-400 text-white rounded-full p-1 text-xs">
-                  ★
-                </span>
-              </div>
+  <div className="relative w-[420px] h-[300px] cursor-pointer transition-transform duration-700 transform-style-preserve-3d hover:rotate-y-180">
 
-              {/* Bars */}
-              <div className="space-y-4">
+    {/* FRONT SIDE */}
+    <div className="absolute inset-0 backface-hidden bg-white rounded-3xl shadow-2xl flex items-center justify-center">
+      <img
+        src={Img}
+        alt="Gradebook"
+        className="w-full h-full object-contain rounded-3xl"
+      />
+    </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-200" />
-                  <div className="flex-1 h-3 bg-blue-300 rounded-full" />
-                  <span className="text-sm bg-blue-100 px-3 py-1 rounded-full">
-                    100
-                  </span>
-                </div>
+    {/* BACK SIDE */}
+    <div className="absolute inset-0 backface-hidden rotate-y-180 bg-white rounded-3xl shadow-2xl flex items-center justify-center">
+      <img
+        src={Img}
+        alt="Gradebook Back"
+        className="w-full h-full object-contain rounded-3xl opacity-90"
+      />
+    </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-200" />
-                  <div className="flex-1 h-3 bg-green-300 rounded-full" />
-                  <span className="text-sm bg-green-100 px-3 py-1 rounded-full">
-                    85
-                  </span>
-                </div>
+  </div>
+</div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-200" />
-                  <div className="flex-1 h-3 bg-red-300 rounded-full" />
-                  <span className="text-sm bg-red-100 px-3 py-1 rounded-full">
-                    75
-                  </span>
-                </div>
 
-              </div>
-
-              {/* Export button */}
-              <div className="flex justify-end mt-6">
-                <button className="bg-blue-600 text-white px-5 py-2 rounded-full text-sm">
-                  Export
-                </button>
-              </div>
-
-              {/* Decorative icons */}
-              <div className="absolute top-6 right-6 w-8 h-8 bg-blue-200 rounded-full" />
-              <div className="absolute bottom-6 left-6 w-8 h-8 bg-blue-100 rounded-full" />
-
-            </div>
-          </div>
+              
+            
+          
 
         </div>
       </div>

@@ -1,3 +1,5 @@
+import Img from "../assets/testimonial.png";
+
 export default function Testimonial() {
   return (
     <section className="w-full bg-[#eef7fb] py-24">
@@ -37,7 +39,7 @@ export default function Testimonial() {
 
           {/* IMAGE */}
           <img
-            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2"
+            src={Img}
             alt="testimonial"
             className="w-96 rounded-[36px] object-cover"
           />
