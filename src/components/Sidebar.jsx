@@ -2,7 +2,6 @@
 //   return (
 //     <aside className="w-64 min-h-screen bg-indigo-900 text-white p-6">
 //       <h2 className="text-2xl font-bold mb-8">TMS</h2>
-
 //       {role === "trainer" && (
 //         <>
 //           <p className="mb-4 cursor-pointer">Dashboard</p>
