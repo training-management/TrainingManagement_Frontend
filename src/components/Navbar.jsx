@@ -16,7 +16,7 @@ export default function Navbar() {
           <img
             src={Logo}
             alt="TalentGrow Logo"
-            className="h-10 object-contain"
+            className="h-20 object-contain"
           />
         </div>
 
