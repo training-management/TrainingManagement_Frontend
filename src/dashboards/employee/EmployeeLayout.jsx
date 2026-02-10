@@ -1,11 +1,12 @@
 // import Sidebar from "../../components/Sidebar";
 // import { Outlet } from "react-router-dom";
 
-
-// export default function TrainerLayout() {
+// export default function EmployeeLayout() {
 //   return (
-//     <div className="flex bg-[#F9FAFB]">
-//       <Sidebar role="trainer" />
+//     <div className="flex min-h-screen bg-[#F9FAFB]">
+//       <Sidebar role="employee" />
+
+//       {/* CONTENT */}
 //       <main className="flex-1 p-6 overflow-y-auto">
 //         <Outlet />
 //       </main>
@@ -16,26 +17,18 @@ import Sidebar from "../../components/Sidebar";
 import Topbar from "../../components/Topbar";
 import { Outlet } from "react-router-dom";
 
-
-export default function TrainerLayout() {
+export default function EmployeeLayout() {
   return (
     <div className="flex h-screen bg-[#F9FAFB]">
-      
-      {/* Sidebar */}
-      <Sidebar role="trainer" />
+      <Sidebar role="employee" />
 
-      {/* Right side (Topbar + Content) */}
       <div className="flex flex-col flex-1">
-        
-        {/* Topbar */}
-        <Topbar title="Trainer Dashboard" />
-
-        {/* Page content */}
+        <Topbar />
         <main className="flex-1 p-6 overflow-y-auto">
           <Outlet />
         </main>
       </div>
-
     </div>
   );
 }
+    
