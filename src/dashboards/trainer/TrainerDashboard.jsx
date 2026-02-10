@@ -496,6 +496,10 @@ const EmployeeRow = ({ name, course, progress }) => (
           src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${name}`}
           alt="avatar"
         />
+
+
+
+        
       </div>
       <div>
         <p className="font-bold text-slate-800">{name}</p>
