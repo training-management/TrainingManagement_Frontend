@@ -38,7 +38,7 @@ export default function AllBooks() {
           </div>
 
           {/* CENTER BOOK CARD */}
-          <div className="bg-white rounded-3xl p-8 shadow-card flex gap-8 items-center">
+          <div className="bg-white w-100 rounded-3xl p-8 shadow-card flex gap-8 items-center">
             <img
               src={Img}
               alt="Python Book"
