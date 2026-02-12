@@ -23,7 +23,7 @@ export default function Navbar() {
         {/* Menu */}
         <ul className="flex gap-10 text-white font-medium">
           <li onClick={() => navigate("/")} className="cursor-pointer">Home</li>
-          <li onClick={() => navigate("/courses")} className="cursor-pointer">Training</li>
+          <li onClick={() => navigate("/training")} className="cursor-pointer">Training</li>
           <li  onClick={() => navigate("/Programs")} className="cursor-pointer">Programs</li>
           <li  onClick={() => navigate("/courses")} className="cursor-pointer">Dashboard</li>
           <li  onClick={() => navigate("/courses")} className="cursor-pointer">About Us</li>
