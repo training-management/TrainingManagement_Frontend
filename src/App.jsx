@@ -46,14 +46,6 @@ function App() {
       
      
 
-
-
-
-
-
-
-
-
      <Route path="/hr" element={<HrLayout />}>
   <Route index element={<HrDashboard />} />
   <Route path="training-programs" element={<TrainingPrograms />} />
