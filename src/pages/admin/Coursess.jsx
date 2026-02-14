@@ -1,4 +1,4 @@
-export default function Coursest() {
+export default function Coursess() {
   return (
     <div className="space-y-10">
 

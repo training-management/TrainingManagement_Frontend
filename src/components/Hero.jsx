@@ -14,8 +14,8 @@ export default function Hero() {
         <div>
           <h1 className="text-6xl font-bold leading-tight">
             <span className="text-[#1F3C88]">Everthing you need to</span>{" "}
-            <span className="text-white">Manage training & Workforce--</span> <br />
-            <span className="text-white"> in one smart platform</span>
+            <span className="text-white">Manage training with--</span> <br />
+            <span className="text-white">  one smart platform</span>
           </h1>
 
           <p className="text-white opacity-80 mt-6 max-w-xl">
@@ -27,22 +27,24 @@ export default function Hero() {
           <div className="flex items-center gap-6 mt-10">
             <button
               onClick={() => navigate("/courses")}
-              className="bg-yellow-400 text-white px-8 py-4 rounded-full font-semibold"
+              className="bg-yellow-400 text-white px-8 py-4 rounded-full font-semibold shadow hover:scale-106 transition cursor-pointer"
             >
               Join for free
             </button>
-
-            <div className="flex items-center gap-3 text-white font-medium cursor-pointer">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#4EC1BE]">
-                ▶
-              </div>
-              Learn More
-            </div>
+           
+             <button
+              onClick={() => navigate("/courses")}
+              className="bg-[#4EC1BE] text-white px-8 py-4 rounded-full font-semibold shadow hover:scale-106 transition cursor-pointer"
+            >
+               ▶Learn More
+            </button>
+           
           </div>
         </div>
 
+
         {/* RIGHT IMAGE CONTAINER */}
-        <div className="relative flex justify-center">
+        <div className="relative flex justify-center">   
 
           {/* SOFT BACKGROUND */}
           <div className=" bg-[#6FD1CE] rounded-[40px] w-[420px] h-[520px]">
@@ -58,7 +60,7 @@ export default function Hero() {
          
 
           {/* TOP CARD */}
-          <div className="absolute top-6 left-[-40px] bg-white px-6 py-3 rounded-xl shadow-lg z-20">
+          <div className="absolute top-6 left-[-40px] bg-white px-6 py-3 rounded-xl shadow-lg z-20 shadow hover:scale-110 transition cursor-pointer">
             📊 <span className="font-semibold">Training Class</span>
           </div>
 
@@ -66,7 +68,7 @@ export default function Hero() {
           <div className="absolute bottom-15 left-0 bg-white p-4 rounded-xl shadow-lg w-55 z-20">
             <h3 className="font-bold">Empolyee Learning</h3>
             <p className="text-sm text-gray-500">Dashboard screen reco</p>
-            <button className="mt-3 bg-pink-500 text-white px-4 py-2 rounded-full text-sm">
+            <button className="mt-3 bg-pink-500 text-white px-4 py-2 rounded-full text-sm shadow hover:scale-110 transition cursor-pointer">
               Get Strated
             </button>
           </div>
@@ -82,14 +84,19 @@ export default function Hero() {
       </div>
 
       {/* BOTTOM WAVE */}
-      <div className="absolute bottom-0 left-0 w-full">
-        <svg viewBox="0 0 1440 320">
-          <path
-            fill="#ffffff"
-            d="M0,256L80,240C160,224,320,192,480,170.7C640,149,800,139,960,154.7C1120,171,1280,213,1360,234.7L1440,256L1440,320L0,320Z"
-          />
-        </svg>
-      </div>
+     <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+  <svg
+    viewBox="0 0 1440 320"
+    preserveAspectRatio="none"
+    className="w-full h-[80px] sm:h-[120px] md:h-[150px] lg:h-[180px]"
+  >
+    <path
+      fill="#ffffff"
+      d="M0,256L80,240C160,224,320,192,480,170.7C640,149,800,139,960,154.7C1120,171,1280,213,1360,234.7L1440,256L1440,320L0,320Z"
+    />
+  </svg>
+</div>
+
 
     </div>
   );

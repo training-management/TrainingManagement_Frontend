@@ -5,13 +5,13 @@ export default function AdminLayout() {
     <div className="flex min-h-screen">
 
       {/* SIDEBAR */}
-      <div className="w-64 bg-[#2DD4BF] text-white p-6">
+      <div className="w-64 bg-[#2DD4BF] text-white p-10">
         <h2 className="text-xl font-bold mb-6">Admin Dashboard</h2>
 
         <nav className="space-y-4">
           <NavItem to="/admin" label="Overview" />
           <NavItem to="/admin/department" label="Department" />
-          <NavItem to="/admin/courses" label="Courses" />
+          <NavItem to="/admin/coursess" label="Coursess" />
           <NavItem to="/admin/users" label="Users" />
           <NavItem to="/admin/reportss" label="Reportss" />
         </nav>

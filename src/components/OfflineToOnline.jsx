@@ -10,7 +10,7 @@ const OfflineToOnline = () => {
           <h2 className="text-4xl font-bold leading-snug">
              {" "}
             <span className="text-indigo-900">Everything you can manage in an offline Institute </span>,{" "}
-            <span className="text-teal-500">you can do with Edunexa</span>
+            <span className="text-teal-500">you can do with TalentGrow</span>
           </h2>
 
           <p className="mt-6 text-gray-600 text-lg">
