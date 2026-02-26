@@ -24,10 +24,13 @@ export default function Navbar() {
         <ul className="flex gap-10 text-white font-medium">
           {[
             { label: "Home", path: "/" },
-            { label: "Training", path: "/courses" },
+            { label: "Training", path: "/Training" },
             { label: "Programs", path: "/Programs" },
             { label: "Dashboard", path: "/courses" },
-            { label: "About Us", path: "/courses" },
+            { label: "About Us", path: "/About Us" },
+            
+            
+            
           ].map((item, index) => (
             <li
               key={index}

@@ -27,7 +27,7 @@ export default function ClassManagement() {
 {/* RIGHT IMAGE CARD */}
 <div className="flex justify-center perspective-1000">
 
-  <div className="relative w-[420px] h-[300px] cursor-pointer transition-transform duration-700 transform-style-preserve-3d hover:rotate-y-180">
+  <div className="relative w-[420px] h-[300px] cursor-pointer  transition-transform duration-700 transform-style-preserve-3d hover:rotate-y-180">
 
     {/* FRONT SIDE */}
     <div className="absolute inset-0 backface-hidden bg-white rounded-3xl shadow-2xl flex items-center justify-center">
@@ -49,12 +49,6 @@ export default function ClassManagement() {
 
   </div>
 </div>
-
-
-              
-            
-          
-
         </div>
       </div>
     </section>

@@ -18,7 +18,7 @@ export default function LatestNews() {
 
           {/* LEFT BIG CARD */}
           <div>
-            <div className="relative">
+            <div className="relative cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
                 alt="news"
@@ -49,7 +49,7 @@ export default function LatestNews() {
           <div className="flex flex-col gap-8">
 
             {/* ITEM */}
-            <div className="flex gap-6">
+            <div className="flex gap-6 cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1519681393784-d120267933ba"
                 className="w-40 h-28 rounded-2xl object-cover"
@@ -68,7 +68,7 @@ export default function LatestNews() {
             </div>
 
             {/* ITEM */}
-            <div className="flex gap-6">
+            <div className="flex gap-6 cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04"
                 className="w-40 h-28 rounded-2xl object-cover"
@@ -87,7 +87,7 @@ export default function LatestNews() {
             </div>
 
             {/* ITEM */}
-            <div className="flex gap-6">
+            <div className="flex gap-6 cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
                 className="w-40 h-28 rounded-2xl object-cover"

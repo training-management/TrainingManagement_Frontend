@@ -18,11 +18,11 @@ export default function Features() {
         </div>
 
         {/* MAIN CONTENT */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center ">
 
           {/* LEFT IMAGE */}
           <div className="flex justify-center">
-            <div className="bg-white rounded-2xl shadow-xl p-6 max-w-lg">
+            <div className="bg-white rounded-2xl shadow-xl p-6 max-w-lg cursor-pointer shadow hover:scale-110 transition">
               <img
                 src={Img}
                 alt="Feature UI"

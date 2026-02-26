@@ -1,6 +1,10 @@
 import { useState } from "react";
 import galaxy from "../assets/galaxy.jpg";
 import beach from "../assets/beach.jpg";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 
 export default function Auth() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -105,11 +109,13 @@ function Form({ title, isSignup, togglePassword, showPassword }) {
     <form className="w-1/2 flex flex-col justify-center items-center px-10 text-center bg-white">
       <h1 className="text-2xl font-bold mb-4">{title}</h1>
 
-      <div className="flex gap-3 mb-5">
-        <Social />
-        <Social />
-        <Social />
-        <Social />
+      <div className="flex gap-4 mb-5">
+       
+        <FaFacebookF color="#1877F2" />
+        <FaInstagram color="#E4405F" />
+        <FaTwitter color="#1DA1F2" />
+         <FaLinkedinIn color="#0A66C2" />
+       
       </div>
 
       {isSignup && (
@@ -181,7 +187,9 @@ function Form({ title, isSignup, togglePassword, showPassword }) {
 function Social() {
   return (
     <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center shadow hover:scale-110 transition cursor-pointer">
-      
+     
+     
     </div>
+    
   );
 }

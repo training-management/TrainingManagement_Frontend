@@ -107,6 +107,8 @@
 //     </section>
 //   );
 // }
+
+
 export default function PracticeQuestions() {
   return (
     <section className="w-full bg-[#eef7fb] py-24 overflow-x-hidden">
@@ -132,7 +134,7 @@ export default function PracticeQuestions() {
         <div className="grid grid-cols-1 lg:grid-cols-[auto_minmax(420px,480px)_auto] gap-20 items-center">
 
           {/* LEFT COLOR BARS */}
-          <div className="hidden lg:flex gap-4">
+          <div className="hidden lg:flex gap-4 cursor-pointer">
             {[
               { t: "Frontend", c: "#ff7b7b" },
               { t: "Backend", c: "#9c5a1a" },
@@ -157,7 +159,7 @@ export default function PracticeQuestions() {
           </div>
 
           {/* WHITE CARD */}
-          <div className="bg-white rounded-3xl shadow-xl p-8 flex gap-6 items-start">
+          <div className="bg-white rounded-3xl shadow-xl p-8 flex gap-6 items-start cursor-pointer  shadow hover:scale-110 transition">
 
             <img
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
@@ -194,7 +196,7 @@ export default function PracticeQuestions() {
           </div>
 
           {/* RIGHT COLOR BARS */}
-          <div className="hidden lg:flex gap-4">
+          <div className="hidden lg:flex gap-4 cursor-pointer ">
             {[
               { t: "DevOps", c: "#4db6ac" },
               { t: "Testing", c: "#2ecc71" },

@@ -35,7 +35,7 @@ export default function Testimonial() {
         </div>
 
         {/* RIGHT */}
-        <div className="relative">
+        <div className="relative cursor-pointer ">
 
           {/* IMAGE */}
           <img

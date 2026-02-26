@@ -8,7 +8,7 @@
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
           {/* LEFT CARD */}
-          <div className="flex justify-center">
+          <div className="flex justify-center cursor-pointer shadow hover:scale-110 transition">
             <div className="relative bg-white rounded-2xl shadow-xl p-6 w-420px">
 
               {/* Decorative shapes */}
@@ -30,10 +30,10 @@
 
               {/* Correct / wrong icons */}
               <div className="absolute top-8 right-8 bg-white shadow-md rounded-full p-2 text-red-500">
-                ✕
+                
               </div>
               <div className="absolute top-20 right-6 bg-white shadow-md rounded-full p-2 text-green-500">
-                ✓
+                
               </div>
 
             </div>
