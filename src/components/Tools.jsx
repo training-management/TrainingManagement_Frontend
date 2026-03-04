@@ -22,7 +22,7 @@ export default function Tools() {
           </div>
 
           {/* RIGHT IMAGE CARD */}
-          <div className="flex justify-center">
+          <div className="flex justify-center cursor-pointer shadow hover:scale-110 transition">
             <div className="relative bg-white rounded-2xl shadow-xl p-10 w-full">
 
               {/* DOT BACKGROUND */}

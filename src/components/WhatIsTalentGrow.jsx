@@ -15,7 +15,7 @@ export default function WhatIsTalentGrow() {
 
         {/* Description */}
         <p className="mt-4 text-gray-500 max-w-4xl mx-auto">
-        Edunexa is a modern Training & Management System designed to help institutes,
+        TalentGrow  is a modern Training & Management System designed to help institutes,
           organizations, and companies manage training programs, trainers, learners,
           attendance, assessments, and performance — all from one centralized,
           cloud-based platform.

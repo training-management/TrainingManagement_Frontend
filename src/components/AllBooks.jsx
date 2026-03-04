@@ -18,7 +18,7 @@ export default function AllBooks() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
 
           {/* LEFT TAGS */}
-          <div className="flex gap-4">
+          <div className="flex gap-4 cursor-pointer">
             {[
               { t: "UI / UX", c: "#ff8a00" },
               { t: "Web Dev", c: "#ff7b7b" },
@@ -38,7 +38,7 @@ export default function AllBooks() {
           </div>
 
           {/* CENTER BOOK CARD */}
-          <div className="bg-white w-100 rounded-3xl p-8 shadow-card flex gap-8 items-center">
+          <div className="bg-white w-100 rounded-3xl p-8 shadow-card flex gap-8 items-center cursor-pointer  shadow hover:scale-110 transition">
             <img
               src={Img}
               alt="Python Book"
@@ -79,7 +79,7 @@ export default function AllBooks() {
           </div>
 
           {/* RIGHT TAGS */}
-          <div className="flex gap-4 justify-end">
+          <div className="flex gap-4 justify-end cursor-pointer">
             {[
               { t: "AI / ML", c: "#2ecc71" },
               { t: "React", c: "#00a2ff" },

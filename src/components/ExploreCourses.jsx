@@ -32,7 +32,7 @@ export default function ExploreCourses() {
 
          {/* LEFT TAGS – PIANO STYLE */}
 {/* LEFT TAGS – PIANO WITH SOUND */}
-<div className="flex gap-4 overflow-hidden">
+<div className="flex gap-4 overflow-hidden cursor-pointer ">
   {[
     "Web Design",
     "Python",
@@ -49,7 +49,7 @@ export default function ExploreCourses() {
              text-white font-semibold rotate-6deg
              transition-all duration-150
              hover:-translate-y-1
-             active:translate-y-2 active:shadow-inner"
+             active:translate-y-2 active:shadow-inner cursor-pointer  shadow hover:scale-110 transition"
   style={{
     background: [
       "#ff8a00",
@@ -73,7 +73,7 @@ export default function ExploreCourses() {
 </div>
 
           {/* RIGHT CARD */}
-          <div className="bg-white rounded-3xl p-8 shadow-card flex gap-6 items-center">
+          <div className="bg-white rounded-3xl p-8 shadow-card flex gap-6 items-center  shadow hover:scale-110 transition cursor-pointer">
             <img
               src={Img}
               alt="fullstack"

@@ -12,7 +12,7 @@ export default function OneOnOne() {
         <div className="flex justify-center perspective-1000">
           <div
             onClick={() => setFlip(!flip)}
-            className={`relative w-[520px] h-[360px] cursor-pointer transition-transform duration-700 transform-style-preserve-3d
+            className={`relative w-[520px] h-[360px] cursor-pointer shadow hover:scale-110 transition-transform duration-700 transform-style-preserve-3d
             ${flip ? "rotate-y-180" : ""}`}
           >
 
@@ -50,7 +50,7 @@ export default function OneOnOne() {
 
           <p className="mt-6 text-gray-500 max-w-lg leading-relaxed">
             Trainers and learners can have secure private video conversations
-            inside the Edunexa training platform without interruption.
+            inside the talentGrow training platform without interruption.
           </p>
         </div>
 

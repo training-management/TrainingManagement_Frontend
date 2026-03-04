@@ -4,7 +4,7 @@ export default function Footer() {
 
       {/* TOP INFO BAR */}
       <div className="bg-teal-500 text-white text-sm">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between cursor-pointer">
           <span>Support: +91 98765 43210</span>
            <span>Email: admissions@talentgrow.com</span>
           
@@ -19,13 +19,13 @@ export default function Footer() {
         </h3>
 
         <div className="flex justify-center">
-          <div className="flex bg-[#1e293b] rounded-full p-1 w-460">
+          <div className="flex bg-[#1e293b] rounded-full p-1 w-100">
             <input
               type="email"
               placeholder="Your Email Address"
               className="bg-transparent flex-1 px-6 text-sm outline-none"
             />
-            <button className="bg-teal-400 text-[#0f172a] px-8 py-2 rounded-full font-medium">
+            <button className="bg-teal-400 text-[#0f172a] px-8 py-2 rounded-full font-medium cursor-pointer">
               Subscribe
             </button>
           </div>
