@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Resultss = () => {
 
@@ -11,14 +12,12 @@ const Resultss = () => {
     { id: 4, name: "Sneha Patel", batch: "Node B", score: 45 },
   ];
 
-  // Result Logic
   const getResultStatus = (score) => {
     if (score >= 80) return "Distinction";
     if (score >= 60) return "Pass";
     return "Fail";
   };
 
-  // Filter Logic
   const filteredData =
     filter === "All"
       ? trainees
@@ -47,64 +46,86 @@ const Resultss = () => {
   );
 
   return (
-    <div className="p-6 my-5 bg-gray-100 min-h-screen">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="p-6 my-5 bg-gray-100 min-h-screen"
+    >
 
-      <h1 className="text-3xl font-bold mb-6">
+      <motion.h1
+        initial={{ y: -30 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-3xl font-bold mb-6"
+      >
         Trainer Result Dashboard
-      </h1>
+      </motion.h1>
 
       {/* Statistics Cards */}
       <div className="grid grid-cols-4 gap-6 mb-8">
 
-        <div className="bg-white p-4 rounded shadow">
-          <h3>Total Trainees</h3>
-          <p className="text-2xl font-bold">{total}</p>
-        </div>
-
-        <div className="bg-green-100 p-4 rounded">
-          <h3>Distinction</h3>
-          <p className="text-2xl font-bold">{distinctionCount}</p>
-        </div>
-
-        <div className="bg-blue-100 p-4 rounded">
-          <h3>Pass</h3>
-          <p className="text-2xl font-bold">{passCount}</p>
-        </div>
-
-        <div className="bg-red-100 p-4 rounded">
-          <h3>Fail</h3>
-          <p className="text-2xl font-bold">{failCount}</p>
-        </div>
+        {[ 
+          { title: "Total Trainees", value: total, bg: "bg-white" },
+          { title: "Distinction", value: distinctionCount, bg: "bg-green-100" },
+          { title: "Pass", value: passCount, bg: "bg-blue-100" },
+          { title: "Fail", value: failCount, bg: "bg-red-100" },
+        ].map((card, index) => (
+          <motion.div
+            key={index}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: index * 0.1 }}
+            whileHover={{ scale: 1.05 }}
+            className={`${card.bg} p-4 rounded shadow cursor-pointer`}
+          >
+            <h3>{card.title}</h3>
+            <p className="text-2xl font-bold">{card.value}</p>
+          </motion.div>
+        ))}
 
       </div>
 
       {/* Top Performer */}
-      <div className="bg-yellow-100 p-4 rounded mb-6">
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        whileHover={{ scale: 1.02 }}
+        className="bg-yellow-100 p-4 rounded mb-6 shadow"
+      >
         <h2 className="font-semibold">
           🏆 Top Performer: {topPerformer.name} ({topPerformer.score})
         </h2>
         <p>Average Score: {avgScore.toFixed(1)}</p>
-      </div>
+      </motion.div>
 
       {/* Filter Buttons */}
       <div className="flex gap-4 mb-6">
         {["All", "Distinction", "Pass", "Fail"].map((type) => (
-          <button
+          <motion.button
             key={type}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => setFilter(type)}
-            className={`px-4 py-2 rounded ${
+            className={`px-4 py-2 rounded transition ${
               filter === type
                 ? "bg-black text-white"
                 : "bg-white border"
             }`}
           >
             {type}
-          </button>
+          </motion.button>
         ))}
       </div>
 
       {/* Result Table */}
-      <div className="bg-white p-5 rounded shadow">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        className="bg-white p-5 rounded shadow"
+      >
         <table className="w-full border-collapse">
           <thead>
             <tr className="bg-gray-200">
@@ -116,8 +137,14 @@ const Resultss = () => {
           </thead>
 
           <tbody>
-            {filteredData.map((t) => (
-              <tr key={t.id} className="text-center">
+            {filteredData.map((t, index) => (
+              <motion.tr
+                key={t.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center hover:bg-gray-100 transition"
+              >
                 <td className="p-2 border">{t.name}</td>
                 <td className="p-2 border">{t.batch}</td>
                 <td className="p-2 border">{t.score}</td>
@@ -130,20 +157,24 @@ const Resultss = () => {
                 >
                   {getResultStatus(t.score)}
                 </td>
-              </tr>
+              </motion.tr>
             ))}
           </tbody>
         </table>
-      </div>
+      </motion.div>
 
       {/* Export Button */}
       <div className="mt-6">
-        <button className="bg-purple-600 text-white px-5 py-2 rounded">
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="bg-purple-600 text-white px-5 py-2 rounded shadow-lg"
+        >
           Export Results
-        </button>
+        </motion.button>
       </div>
 
-    </div>
+    </motion.div>
   );
 };
 

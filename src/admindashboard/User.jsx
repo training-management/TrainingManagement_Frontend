@@ -1,10 +1,11 @@
-
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function User() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [search, setSearch] = useState("");
   const [activeTab, setActiveTab] = useState("profile");
+
   const [userList, setUserList] = useState([
     {
       id: 1,
@@ -32,22 +33,7 @@ export default function User() {
       salary: 50000,
       image: "https://i.pravatar.cc/100?img=2",
     },
-
-     {
-      id: 2,
-      name: "Riya Verma",
-      email: "riya@gmail.com",
-      phone: "5872568458",
-      role: "Employee",
-      department: "IT",
-      team: "Recruitment",
-      status: "Active",
-      joining: "2024-11-05",
-      salary: 10000,
-      image: "https://i.pravatar.cc/100?img=2",
-    },
   ]);
-  
 
   const filteredUsers = userList.filter((u) =>
     u.name.toLowerCase().includes(search.toLowerCase())
@@ -57,65 +43,71 @@ export default function User() {
   const activeUsers = userList.filter((u) => u.status === "Active").length;
   const inactiveUsers = userList.filter((u) => u.status === "Inactive").length;
 
-  // Add User
-  const handleAddUser = () => {
-    const newUser = {
-      id: Date.now(),
-      name: "New User",
-      email: "newuser@gmail.com",
-      phone: "9000000000",
-      role: "Employee",
-      department: "IT",
-      team: "Backend",
-      status: "Active",
-      joining: "2026-01-01",
-      salary: 35000,
-      image: "https://i.pravatar.cc/100",
-    };
-    setUserList([...userList, newUser]);
-  };
-
-  // Delete User
   const handleDelete = (id) => {
     setUserList(userList.filter((u) => u.id !== id));
   };
 
   return (
-  
-   <div className="p-6 bg-gray-50 min-h-screen my-5">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="p-6 bg-gray-50 min-h-screen my-5"
+    >
       {/* Header */}
-      <div className="flex justify-between mb-6">
+      <motion.div
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className="flex justify-between mb-6"
+      >
         <h1 className="text-2xl font-bold">Admin User Panel</h1>
-        <button
-          onClick={() => setShowModal(true)}
+        <motion.button
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
           className="bg-indigo-600 text-white px-4 py-2 rounded-lg"
         >
           + Add User
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
 
       {!selectedUser ? (
         <>
           {/* Summary Cards */}
           <div className="grid md:grid-cols-3 gap-6 mb-6">
-            <Card title="Total Users" value={totalUsers} />
-            <Card title="Active Users" value={activeUsers} />
-            <Card title="Inactive Users" value={inactiveUsers} />
+            {[ 
+              { title: "Total Users", value: totalUsers },
+              { title: "Active Users", value: activeUsers },
+              { title: "Inactive Users", value: inactiveUsers },
+            ].map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <Card title={card.title} value={card.value} />
+              </motion.div>
+            ))}
           </div>
 
           {/* Search */}
-          <div className="mb-4">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <input
               type="text"
               placeholder="Search user..."
-              className="w-full md:w-1/3 p-2 border rounded-lg"
+              className="w-full md:w-1/3 p-2 border rounded-lg mb-4"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-          </div>
+          </motion.div>
 
           {/* User Table */}
-          <div className="bg-white rounded-xl shadow p-4 overflow-x-auto">
+          <motion.div
+            initial={{ x: -40, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            className="bg-white rounded-xl shadow p-4 overflow-x-auto"
+          >
             <table className="w-full">
               <thead>
                 <tr className="text-left border-b">
@@ -129,8 +121,14 @@ export default function User() {
                 </tr>
               </thead>
               <tbody>
-                {filteredUsers.map((user) => (
-                  <tr key={user.id} className="border-b hover:bg-gray-50">
+                {filteredUsers.map((user, index) => (
+                  <motion.tr
+                    key={user.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="border-b hover:bg-gray-50"
+                  >
                     <td className="p-2">
                       <img
                         src={user.image}
@@ -170,15 +168,19 @@ export default function User() {
                         Delete
                       </button>
                     </td>
-                  </tr>
+                  </motion.tr>
                 ))}
               </tbody>
             </table>
-          </div>
+          </motion.div>
         </>
       ) : (
         /* User Detail Page */
-        <div className="bg-white rounded-xl shadow p-6">
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="bg-white rounded-xl shadow p-6"
+        >
           <button
             onClick={() => setSelectedUser(null)}
             className="mb-4 text-indigo-600"
@@ -201,8 +203,9 @@ export default function User() {
           {/* Tabs */}
           <div className="flex gap-6 border-b mb-4">
             {["profile", "training", "attendance", "salary"].map((tab) => (
-              <button
+              <motion.button
                 key={tab}
+                whileHover={{ scale: 1.05 }}
                 onClick={() => setActiveTab(tab)}
                 className={`pb-2 capitalize ${
                   activeTab === tab
@@ -211,48 +214,40 @@ export default function User() {
                 }`}
               >
                 {tab}
-              </button>
+              </motion.button>
             ))}
           </div>
 
-          {activeTab === "profile" && (
-            <div className="grid md:grid-cols-2 gap-4">
-              <Info label="Email" value={selectedUser.email} />
-              <Info label="Phone" value={selectedUser.phone} />
-              <Info label="Department" value={selectedUser.department} />
-              <Info label="Team" value={selectedUser.team} />
-              <Info label="Joining Date" value={selectedUser.joining} />
-              <Info label="Status" value={selectedUser.status} />
-            </div>
-          )}
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            {activeTab === "profile" && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <Info label="Email" value={selectedUser.email} />
+                <Info label="Phone" value={selectedUser.phone} />
+                <Info label="Department" value={selectedUser.department} />
+                <Info label="Team" value={selectedUser.team} />
+                <Info label="Joining Date" value={selectedUser.joining} />
+                <Info label="Status" value={selectedUser.status} />
+              </div>
+            )}
 
-          {activeTab === "training" && (
-            <div>
-              <p>Assigned: React Training</p>
-              <p>Completed: 2 Trainings</p>
-              <p>Pending: 1 Training</p>
-            </div>
-          )}
-
-          {activeTab === "attendance" && (
-            <div>
-              <p>Total Days: 22</p>
-              <p>Present: 20</p>
-              <p>Absent: 2</p>
-            </div>
-          )}
-
-          {activeTab === "salary" && (
-            <div>
-              <p>Basic Salary: ₹{selectedUser.salary}</p>
+            {activeTab === "training" && <p>Assigned & Completed Trainings</p>}
+            {activeTab === "attendance" && <p>Attendance Summary</p>}
+            {activeTab === "salary" && (
               <p>Net Salary: ₹{selectedUser.salary + 5000}</p>
-            </div>
-          )}
-        </div>
+            )}
+          </motion.div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 }
+
+/* Components */
 
 function Card({ title, value }) {
   return (
@@ -271,11 +266,3 @@ function Info({ label, value }) {
     </div>
   );
 }
-
-
-
-
-
-
-
-

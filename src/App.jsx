@@ -61,6 +61,7 @@ import Attendances from "./TrainerDashboard/Attendances";
 import Assignment from "./TrainerDashboard/Assignment";
 import Test from "./TrainerDashboard/Test";
 import Resultess from "./TrainerDashboard/Resultess";
+import Profile from "./EmployeeTraineeDashboard/Profile";
 
 
 
@@ -117,6 +118,7 @@ function App() {
       <Route path="Tests" element={<Tests/>}/>
       <Route path="Report" element={<Report/>}/>
       <Route path="Certificates" element={<Certificates/>}/>
+      <Route path="Profile" element={<Profile/>}/>
 
       </Route>
       

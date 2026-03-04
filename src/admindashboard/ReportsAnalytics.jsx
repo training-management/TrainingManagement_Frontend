@@ -1,9 +1,20 @@
+import { motion } from "framer-motion";
+
 export default function ReportsAnalytics() {
   return (
-    <div className="space-y-10 mx-5 my-5">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="space-y-10 mx-5 my-5"
+    >
 
       {/* HEADER */}
-      <div>
+      <motion.div
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <h1 className="text-3xl font-bold text-[#1f2a6b]">
           Reports & Analytics
         </h1>
@@ -11,21 +22,30 @@ export default function ReportsAnalytics() {
           Monitor platform performance, training effectiveness and user
           engagement through centralized reports and analytics.
         </p>
-      </div>
+      </motion.div>
 
       {/* KPI CARDS */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Kpi title="Total Trainings" value="42" />
-        <Kpi title="Active Users" value="118" />
-        <Kpi title="Completion Rate" value="78%" />
-        <Kpi title="System Uptime" value="99.9%" />
+        {[
+          { title: "Total Trainings", value: "42" },
+          { title: "Active Users", value: "118" },
+          { title: "Completion Rate", value: "78%" },
+          { title: "System Uptime", value: "99.9%" },
+        ].map((item, index) => (
+          <Kpi key={index} {...item} delay={index * 0.1} />
+        ))}
       </div>
 
       {/* ANALYTICS SECTIONS */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-        {/* TRAINING PERFORMANCE */}
-        <div className="bg-white rounded-xl shadow p-6">
+        <motion.div
+          initial={{ x: -40, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.02 }}
+          className="bg-white rounded-xl shadow p-6"
+        >
           <h2 className="text-xl font-semibold text-[#1f2a6b] mb-4">
             Training Performance Overview
           </h2>
@@ -36,10 +56,15 @@ export default function ReportsAnalytics() {
             <li>• Average course completion time: <b>4.5 months</b></li>
             <li>• Drop-out rate: <b>12%</b></li>
           </ul>
-        </div>
+        </motion.div>
 
-        {/* USER ENGAGEMENT */}
-        <div className="bg-white rounded-xl shadow p-6">
+        <motion.div
+          initial={{ x: 40, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.02 }}
+          className="bg-white rounded-xl shadow p-6"
+        >
           <h2 className="text-xl font-semibold text-[#1f2a6b] mb-4">
             User Engagement Metrics
           </h2>
@@ -50,11 +75,16 @@ export default function ReportsAnalytics() {
             <li>• Average session duration: <b>38 mins</b></li>
             <li>• Peak usage time: <b>6 PM – 9 PM</b></li>
           </ul>
-        </div>
+        </motion.div>
       </div>
 
       {/* REPORT TYPES */}
-      <div className="bg-white rounded-xl shadow p-6">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        className="bg-white rounded-xl shadow p-6"
+      >
         <h2 className="text-xl font-semibold text-[#1f2a6b] mb-4">
           Available Reports
         </h2>
@@ -73,10 +103,15 @@ export default function ReportsAnalytics() {
             desc="Compare training outcomes across departments."
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* ACTIONS */}
-      <div className="bg-white rounded-xl shadow p-6">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        className="bg-white rounded-xl shadow p-6"
+      >
         <h2 className="text-xl font-semibold text-[#1f2a6b] mb-2">
           Administrative Actions
         </h2>
@@ -100,37 +135,51 @@ export default function ReportsAnalytics() {
             desc="Monitor logs, uptime and platform reliability."
           />
         </div>
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
   );
 }
 
 /* ---------- COMPONENTS ---------- */
 
-function Kpi({ title, value }) {
+function Kpi({ title, value, delay }) {
   return (
-    <div className="bg-white rounded-xl shadow p-6">
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ delay }}
+      whileHover={{ scale: 1.05 }}
+      className="bg-white rounded-xl shadow p-6 cursor-pointer"
+    >
       <p className="text-sm text-gray-500">{title}</p>
       <p className="text-3xl font-bold text-[#1f2a6b] mt-2">{value}</p>
-    </div>
+    </motion.div>
   );
 }
 
 function ReportCard({ title, desc }) {
   return (
-    <div className="border border-dashed border-gray-300 rounded-lg p-4 hover:bg-gray-50">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.97 }}
+      className="border border-dashed border-gray-300 rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition"
+    >
       <h4 className="font-semibold text-[#1f2a6b] mb-2">{title}</h4>
       <p className="text-sm text-gray-600">{desc}</p>
-    </div>
+    </motion.div>
   );
 }
 
 function ActionCard({ title, desc }) {
   return (
-    <div className="border border-dashed border-gray-300 rounded-lg p-4 hover:bg-gray-50">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.97 }}
+      className="border border-dashed border-gray-300 rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition"
+    >
       <h4 className="font-semibold text-[#1f2a6b] mb-2">{title}</h4>
       <p className="text-sm text-gray-600">{desc}</p>
-    </div>
+    </motion.div>
   );
 }

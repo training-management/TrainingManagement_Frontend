@@ -1,7 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import { Plus, Search } from "lucide-react";
 
 function TrainingPrograms() {
+ const [showForm, setShowForm] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    trainer: "",
+    duration: "",
+    date: "",
+    status: "Active",
+  });
+
+ 
+  const [errors, setErrors] = useState({});
+
+  const handleAddProgram = () => {
+    let newErrors = {};
+
+    // Name Validation
+    if (!formData.name.trim()) {
+      newErrors.name = "Program name is required";
+    }
+
+    // Trainer Validation
+    if (!formData.trainer.trim()) {
+      newErrors.trainer = "Trainer name is required";
+    }
+
+    // Duration Validation
+    if (!formData.duration.trim()) {
+      newErrors.duration = "Duration is required";
+    }
+
+    // Date Validation
+    if (!formData.date) {
+      newErrors.date = "Start date is required";
+    } else {
+      const today = new Date();
+      const selectedDate = new Date(formData.date);
+
+      // Remove time part
+      today.setHours(0, 0, 0, 0);
+      selectedDate.setHours(0, 0, 0, 0);
+
+      if (selectedDate < today) {
+        newErrors.date = "Start date cannot be in the past";
+      }
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      alert("Program Added Successfully ✅");
+      setFormData({
+        name: "",
+        trainer: "",
+        duration: "",
+        date: "",
+        status: "Active",
+      });
+      setShowForm(false);
+    }
+  };
+
+
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
 
@@ -9,16 +72,114 @@ function TrainingPrograms() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold">Training Programs</h1>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm mt-2">
             Manage all company training programs
           </p>
         </div>
+ <button
+        onClick={() => setShowForm(!showForm)}
+        className="bg-[#4EC1BE] text-white px-4 py-2 rounded-lg mb-6"
+      >
+        Add Program
+      </button>
 
-        <button className="flex items-center gap-2 bg-[#4EC1BE] text-white px-4 py-2 rounded-lg hover:opacity-90">
-          <Plus size={18} />
-          Add Program
-        </button>
-      </div>
+      {showForm && (
+        <div className="bg-white p-6 rounded-xl shadow-md max-w-2xl">
+          <h2 className="text-lg font-semibold mb-4">Add New Program</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            {/* Program Name */}
+            <div>
+              <input
+                type="text"
+                placeholder="Program Name"
+                className="border p-2 rounded-lg w-full"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+              />
+              {errors.name && (
+                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+              )}
+            </div>
+
+            {/* Trainer Name */}
+            <div>
+              <input
+                type="text"
+                placeholder="Trainer Name"
+                className="border p-2 rounded-lg w-full"
+                value={formData.trainer}
+                onChange={(e) =>
+                  setFormData({ ...formData, trainer: e.target.value })
+                }
+              />
+              {errors.trainer && (
+                <p className="text-red-500 text-sm mt-1">{errors.trainer}</p>
+              )}
+            </div>
+
+            {/* Duration */}
+            <div>
+              <input
+                type="text"
+                placeholder="Duration"
+                className="border p-2 rounded-lg w-full"
+                value={formData.duration}
+                onChange={(e) =>
+                  setFormData({ ...formData, duration: e.target.value })
+                }
+              />
+              {errors.duration && (
+                <p className="text-red-500 text-sm mt-1">{errors.duration}</p>
+              )}
+            </div>
+
+            {/* Date */}
+            <div>
+              <input
+                type="date"
+                className="border p-2 rounded-lg w-full"
+                value={formData.date}
+                
+                onChange={(e) =>
+                  setFormData({ ...formData, date: e.target.value })
+                  
+                }
+              />
+              {errors.date && (
+                <p className="text-red-500 text-sm mt-1">{errors.date}</p>
+              )}
+            </div>
+
+            {/* Status */}
+            <div className="md:col-span-2">
+              <select
+                className="border p-2 rounded-lg w-full"
+                value={formData.status}
+                onChange={(e) =>
+                  setFormData({ ...formData, status: e.target.value })
+                }
+              >
+                <option value="Active">Active</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+          </div>
+
+          <button
+            onClick={handleAddProgram}
+            className="mt-4 bg-[#4EC1BE] text-white px-4 py-2 rounded-lg"
+          >
+            Save Program
+          </button>
+        </div>
+      )}
+    </div>
+  
+
 
       {/* Stats Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
